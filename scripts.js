@@ -15,3 +15,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Existing JavaScript for smooth scrolling...
+
+// Dark Mode Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const checkbox = document.getElementById('checkbox');
+    checkbox.addEventListener('change', function() {
+        // Change the theme of the website
+        if (this.checked) {
+            trans();
+            document.body.classList.add('dark-mode');
+        } else {
+            trans();
+            document.body.classList.remove('dark-mode');
+        }
+    });
+
+    let trans = () => {
+        document.documentElement.classList.add('transition');
+        window.setTimeout(() => {
+            document.documentElement.classList.remove('transition');
+        }, 1000);
+    };
+});
